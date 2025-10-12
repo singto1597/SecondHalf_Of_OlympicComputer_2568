@@ -5,10 +5,22 @@ int main (){
     int n;
     cin >> n;
 
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
-            if (i == 0 || i == n-1 || j == 0 || j == n-1){
-                cout << "*";
+    for (int i = 0; i < n ; i++){
+        for (int j = 0; j < n * 2 - 1; j++){
+            if (i == j || i == 2 * n - 2 - j){
+                cout << (i + 1) % 10;
+
+            }
+            else{
+                cout << " ";
+            }
+        }
+        cout << endl;
+    }
+    for (int i = n - 2; i >= 0 ; i--){
+        for (int j = 0; j < n * 2 - 1; j++){
+            if (i == j || i == 2 * n - 2 - j){
+                cout << (i + 1) % 10;
 
             }
             else{
