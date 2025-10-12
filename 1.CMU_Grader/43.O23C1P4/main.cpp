@@ -37,39 +37,6 @@ int main (){
                 }
             }
             else{
-                // if (messageWord[j].length() > messageWord[j+1].length()){
-                //     for (int indexOfStr = 0; indexOfStr < max(messageWord[j].length(),messageWord[j+1].length()); indexOfStr++){
-                //         if (messageWord[j][indexOfStr] != messageWord[j + 1][indexOfStr] ){
-                //             countOfDifferents++;
-                //         }
-                //         else if (messageWord[j][indexOfStr] != messageWord[j + 1][indexOfStr - 1] ){
-                //             countOfDifferents--;
-                //         }
-                        
-                        
-                //         // cout << countOfDifferents << endl;
-                //     }
-                // }
-                // else if (messageWord[j].length() < messageWord[j+1].length()){
-                //     for (int indexOfStr = 0; indexOfStr < max(messageWord[j].length(),messageWord[j+1].length()); indexOfStr++){
-                //         if (messageWord[j][indexOfStr] != messageWord[j + 1][indexOfStr] ){
-                //             countOfDifferents++;
-                //         }
-                //         else if (messageWord[j][indexOfStr - 1] != messageWord[j + 1][indexOfStr] ){
-                //             countOfDifferents--;
-                //         }
-                        
-                        
-                //         // cout << countOfDifferents << endl;
-                //     }
-                // }
-                // if (countOfDifferents == 0){
-                //     countOfDifferents += max(messageWord[j].length(),messageWord[j+1].length()) - min(messageWord[j].length(),messageWord[j+1].length());
-
-                // }
-                // if (countOfDifferents > 1){
-                //     isFalse = true;
-                // }
                 string longWord, shortWord;
                 if (messageWord[j].length() > messageWord[j+1].length()){
                     longWord = messageWord[j];
@@ -101,10 +68,6 @@ int main (){
                     indexOfStr++;
                 }
             }
-            // cout << endl;
-            // if (countOfDifferents > 1){
-            //         isFalse = true;
-            // }
         }
         if (isFalse){
             cout << "F" << endl;
