@@ -63,3 +63,17 @@ Windows:
         }
     ]
 }
+
+
+
+shortcut setting:
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Run C++ with IO redirect (Linux)" 
+    }
+]
+
+in "preferences: open keyboard shortcut (JSON)
