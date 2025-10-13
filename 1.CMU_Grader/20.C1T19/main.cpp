@@ -2,30 +2,27 @@
 using namespace std;
 
 
-int recursive_function(int number){
-    if (number == 1){
+int recursive_function(int numberOfElephantPoop){
+    if (numberOfElephantPoop == 1){
         return 0;
     }
-    int bestCount = 1e9;
+    int bestPointOfCount = 1e9;
     int count = 0;
-    for (int i = 1; i < number; i ++){
-        if (number % i == 0){
-            count = recursive_function(number - i);
-            if (count < bestCount){
-                bestCount = count;
+    for (int i = 1; i < numberOfElephantPoop; i++){
+        if (numberOfElephantPoop % i == 0){
+            count = recursive_function(numberOfElephantPoop - i);
+            if (count < bestPointOfCount){
+                bestPointOfCount = count;
             }
-            
-
         }
     }
-    return bestCount + 1;
+    return bestPointOfCount + 1;
 
 }
 
 int main (){
-    int inputNumber;
-    cin >> inputNumber;
-    int count = recursive_function(inputNumber);
-    cout << count;
-
+    int n;
+    cin >> n;
+    int count = recursive_function(n);
+    cout << count << endl;
 }
