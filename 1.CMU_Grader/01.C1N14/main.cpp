@@ -8,8 +8,9 @@ int main (){
 
     char *firstIndexPointer = inputString;
 
+
     while (*firstIndexPointer != '\0'){
-        if (i % 2 == 0){
+        if (i % 2 == 0){ 
             *firstIndexPointer = toupper(*firstIndexPointer);
         }
         else {
