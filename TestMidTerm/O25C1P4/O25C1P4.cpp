@@ -36,7 +36,7 @@ int main(){
         cin >> rowOfTreasure[i] >> columOfTreasure[i] >> valueOfTreasure[i];
     }
 
-    for (int j = 0; j < numberOfDirectionOfA)
+    for (int j = 0; j < numberOfDirectionOfA; j++){}
     for (int i = 0; i < numberOfTimeA[0]; i++){
         if (durationOfTimeA[0] == 'N'){
             positionOfARow--;
