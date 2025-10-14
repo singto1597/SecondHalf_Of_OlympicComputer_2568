@@ -22,18 +22,25 @@ int main (){
     }
     // cout << biggerNumber << " " << smallerNumber;
     int GCD = 0;
-    while (1){
-        if ((biggerNumber % smallerNumber == 0 && biggerNumber != 0) || numberA == numberB){
-            GCD = numberA;
-            break;
-        }
-        modResult[index] = biggerNumber % smallerNumber;
-        // cout << modResult[index] << endl;
-        biggerNumber = smallerNumber;
-        smallerNumber = modResult[index];
-        if (modResult[index] == 0) break;
-        index++;
+    if(numberA == numberB){
+        GCD = numberA;
     }
-    GCD = modResult[index - 1];
-    cout << GCD << endl;
+    else if (biggerNumber % smallerNumber == 0){
+        GCD = smallerNumber;
+    }
+    else{
+        while (1){
+            modResult[index] = biggerNumber % smallerNumber;
+            // cout << modResult[index] << endl;
+            biggerNumber = smallerNumber;
+            smallerNumber = modResult[index];
+            if (modResult[index] == 0) break;
+            index++;
+        }
+        GCD = modResult[index - 1];
+    }
+    cout << GCD << " "; //<< endl;
+
+    int LCM = (numberA * numberB) / GCD;
+    cout << LCM << endl;
 }
