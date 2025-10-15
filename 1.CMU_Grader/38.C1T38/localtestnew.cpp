@@ -3,33 +3,28 @@ using namespace std;
 
 struct Node {
     int data;
-    Node* next;
+    Node* next = NULL;
 };
 
 
 Node* head = nullptr;
 
 
-Node* createNode(int data) {
-    //Your Code
-    Node *newNode = new Node();
-    newNode -> data = data;
-    newNode -> next = NULL;
-    return newNode;
-}
-
-
-void insertFirst(int data) {
-    //Your Code
-    Node *firstNode = createNode(data);
-    firstNode -> next = head;
-    head = firstNode;
-
-}
-
-
 void insertByIndex(int idx,int data) {
-    
+    Node *cur = head;
+
+    if (idx == 0){
+        Node *newNode = new Node{data, head};
+        head = newNode;
+        return;
+    }
+
+    for (int i = 0; i < idx - 1; i++){
+        if (cur -> next == NULL) break;
+        cur = cur -> next;
+    }
+    Node *newNode = new Node{data, cur -> next};
+    cur -> next = newNode;
 
 }
 
@@ -50,12 +45,12 @@ void printList() {
 
 
 int main() {
-    insertFirst(9);
-    printList();
-    insertFirst(19);
-    insertFirst(50);
-    insertFirst(40);
-    insertFirst(90);
+    insertByIndex(0, 45);
+    insertByIndex(0, 50);
+    insertByIndex(0, 60);
+    insertByIndex(0, 70);
+    insertByIndex(0, 80);
+    insertByIndex(4, 40);
     printList();
 
     return 0;

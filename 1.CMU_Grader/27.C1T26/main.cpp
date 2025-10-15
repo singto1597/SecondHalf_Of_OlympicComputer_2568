@@ -58,9 +58,10 @@ void findSubString(int number){
         
     }
     else{
-
+        if (baseInput == ""){
+            
+        }
         result.push_back(baseInput[number]);
-
         findSubString(number+1);
 
         result.pop_back();
