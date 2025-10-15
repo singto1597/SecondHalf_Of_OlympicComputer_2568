@@ -38,45 +38,62 @@ void findSubString(int number){
 
         // }
         
-        // if (!result.empty()){
-        //     // if ((result[0] == '0' && result[1] != '0') && result.size() > 1){
-        //     //     result.erase(0);
-        //     // }
-        //     int indexStarts = 0;
-        //     for (int i = 0; i < result.size(); i++){
-        //         if (result[i] == '1'){
-        //             indexStarts = i;
-        //             break;
-        //         }
-        //     }
-        //     string buffer = result;
-        //     // if (int(buffer.size()) - indexStarts - 1 == 0){
-        //     //     result = "0";
-        //     // }
-        //     // else{
+        if (!result.empty()){
+            // if ((result[0] == '0' && result[1] != '0') && result.size() > 1){
+            //     result.erase(0);
+            // }
+            int indexStarts = -1;
+            // for (int i = 0; i < result.size(); i++){
+            //     if (result[i] == '1'){
+            //         indexStarts = i;
+            //         break;
+            //     }
+            // }
+            string buffer = result;
+            result = "";
 
-        //         result = buffer.substr(indexStarts);
-        //     // }
-        //     for (int i = 0; i < result.size(); i++){
-        //         if (i % 2 == 0){
-        //             if (result[i] == '0'){
-        //                 isFalse = true;
-        //             }
+            if (buffer == ""){
+                return;
+            } 
+            for (int i = 0; i < buffer.size(); i++){
+                indexStarts = i;
+                if (buffer[i] != '0'){
+                    break;
+                } 
+            }
+
+            if (indexStarts == buffer.size() - 1){
+                result = "0";
+            }
+            else{
+                for (int i = indexStarts; i < buffer.size(); i++){
+                    result = result + buffer[i];
+                }
+                
+            }
+
+
+            for (int i = 0; i < result.size(); i++){
+                if (i % 2 == 0){
+                    if (result[i] == '0'){
+                        isFalse = true;
+                    }
                     
-        //         }
-        //         else {
-        //             if (result[i] == '1'){
-        //                 isFalse = true;
-        //             }
-        //         }
-        //     }
-        // }
-        // if (!isFalse && !result.empty()){
-        //     setOfInfo.insert(result);
-        // }
+                }
+                else {
+                    if (result[i] == '1'){
+                        isFalse = true;
+                    }
+                }
+            }
+        }
+        if (!isFalse && !result.empty()){
+            setOfInfo.insert(result);
+        }
         
     }
     else{
+        
         result.push_back(baseInput[number]);
         // setOfInfo.insert(result);
 
@@ -95,9 +112,9 @@ int main(){
 
     findSubString(0);
 
-    // for (auto i : setOfInfo){
-    //     cout << i << endl;
-    // }
+    for (auto i : setOfInfo){
+        cout << i << endl;
+    }
 
     cout << setOfInfo.size() << endl;
 }
