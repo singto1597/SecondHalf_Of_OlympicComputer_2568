@@ -37,24 +37,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct node {
-    int number;
-    node *poiterOfNext;
-};
+// struct node {
+//     int number;
+//     node *poiterOfNext;
+// };
 
 int main(){
-    node *head = new node();
-    head -> number = 20;
-    head -> poiterOfNext = NULL;
+    // node *head = new node();
+    // head -> number = 20;
+    // head -> poiterOfNext = NULL;
 
-    node *second = new node();
-    second -> number = 22;
-    second -> poiterOfNext = NULL;
+    // node *second = new node();
+    // second -> number = 22;
+    // second -> poiterOfNext = NULL;
 
-    head -> poiterOfNext = second;
+    // head -> poiterOfNext = second;
 
-    cout << head->number << " <- " << second->number << endl;
+    // cout << head->number << " <- " << second->number << endl;
 
-
+    long long sumery = 1;
+    for (int i = 1; i <= 222; i++){
+        sumery = (sumery * 7) % 10;
+    }
+    cout << sumery << endl;
 
 }
